@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_demo"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_app_bar"
+        style="@style/Glassmorphism"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            style="@style/ImageButton"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="s;l,fs;dlf,s;dl"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_settings" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="Restic Logo"
+            android:padding="6dp"
+            android:src="@drawable/restic_logo" />
+
+        <ImageButton
+            android:id="@+id/manuallyAddPc"
+            style="@style/UserBadge"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="slkdmfsldkfm"
+            android:scaleType="fitXY"
+            android:src="@drawable/user_badge" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:paddingHorizontal="10dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/freeTextViewTitle"
+                    android:background="#88FFFFFF" />
+
+                <TextView
+                    android:id="@+id/freeTextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingHorizontal="10dp"
+                    android:text="بازی ها"
+                    android:textColor="#FFFFFF" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/freeTextViewTitle"
+                    android:background="#88FFFFFF" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/freeGamesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="10dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/premiumTextViewTitle"
+                    android:background="#88FFFFFF" />
+
+                <TextView
+                    android:id="@+id/premiumTextViewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingHorizontal="10dp"
+                    android:text="بازی های ویژه"
+                    android:textColor="#FFFFFF" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/premiumTextViewTitle"
+                    android:background="#88FFFFFF" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/premiumGamesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="true"
+                android:padding="20dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
